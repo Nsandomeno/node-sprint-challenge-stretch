@@ -9,12 +9,13 @@ function App() {
     axios.get('http://localhost:5000/api/projects')
       .then((response) => {
         console.log("This is the response:", response)
+        setProjects(response.data)
       })
       .catch((error) => {
         console.log("This is the error:", error)
       })
   }, [])
-  
+
   return (
     <div className="App">
       {
